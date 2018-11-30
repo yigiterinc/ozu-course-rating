@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <h3>Bootstrap Test</h3>
+    <b-alert show variant="primary">Primary Alert</b-alert>
     <h2>Essential Links</h2>
     <ul>
       <li>
