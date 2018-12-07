@@ -1,0 +1,14 @@
+[
+  {
+  "questionId": 1,
+  "questionText": "Do you think that course was beneficial for your personal and technical development?"
+  },
+  {
+  "questionId": 2,
+  "questionText": "Would you still take this course if it was an elective? (For mandatory courses)"
+  },
+  {
+  "questionId": 3,
+  "questionText": "Would you call this course as a difficult course?"
+  }
+]
