@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <authentication-page></authentication-page>
+    <evaluation-page></evaluation-page>
   </div>
 </template>
 
 <script>
-  import AuthenticationPage from './components/authentication-page/authentication-page.vue'
-  export default {
-    name: 'App',
-    components: {
-      AuthenticationPage
-    }
 
+  import EvaluationPage from './components/evaluation-page/evaluation-page.vue'
+
+export default {
+  name: 'App',
+  components: {
+    EvaluationPage
   }
 </script>
 
