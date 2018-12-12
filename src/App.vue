@@ -13,6 +13,7 @@ export default {
   components: {
     ResultsPage
   }
+}
 </script>
 
 <style>
