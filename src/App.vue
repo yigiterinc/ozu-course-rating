@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <evaluation-page></evaluation-page>
+    <results-page :redirected-from-evaluation-page="true"></results-page>
   </div>
 </template>
 
 <script>
-  import EvaluationPage from './components/evaluation-page/evaluation-page.vue'
+  import ResultsPage from './components/results-page/results-page.vue'
 
 export default {
   name: 'App',
   components: {
-    EvaluationPage
+    ResultsPage
   }
 }
 </script>
