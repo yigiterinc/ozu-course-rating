@@ -1,15 +1,28 @@
 <template>
   <div id="app">
-    <not-found-page></not-found-page>
+    <evaluation-page></evaluation-page>
   </div>
 </template>
 
 <script>
-  import NotFoundPage from './components/not-found-page/not-found-page.vue'
+
+  import EvaluationPage from './components/evaluation-page/evaluation-page.vue'
+
 export default {
   name: 'App',
   components: {
-    NotFoundPage
+    EvaluationPage
   }
-}
 </script>
+
+<style>
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+
+  }
+</style>
