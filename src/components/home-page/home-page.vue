@@ -7,9 +7,9 @@
 </template>
 
 <script>
-  import NavBar from '/Users/sarpozturk/ozu-course-rating/src/components/home-page/nav-bar.vue';
-  import Jumbotron from '/Users/sarpozturk/ozu-course-rating/src/components/home-page/jumbotron.vue';
-  import Steps from '/Users/sarpozturk/ozu-course-rating/src/components/home-page/steps.vue'
+  import NavBar from './nav-bar.vue';
+  import Jumbotron from './jumbotron.vue';
+  import Steps from './steps.vue'
   export default {
         name: "home-page",
         components: {

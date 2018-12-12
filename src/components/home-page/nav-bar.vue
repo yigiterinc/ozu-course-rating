@@ -11,7 +11,7 @@
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto" >
 
-          <b-navbar-nav id="courses">
+          <b-navbar-nav id="coursesSection">
             <b-nav-item href="#">Courses</b-nav-item>
           </b-navbar-nav>
 
@@ -33,7 +33,7 @@
     background-color: #a30050 !important;
   }
 
-  #courses {
+  #coursesSection {
     margin-right: 70px;
   }
 

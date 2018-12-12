@@ -4,7 +4,7 @@
       <b-col id="image">
         <img src="../../assets/logo.png" >
       </b-col>
-      <b-col id="list">
+      <b-col id="steps">
         <ul>
           <li><strong>Step 1)</strong> Authenticate with your OzU mail to use the website.</li>
           <p></p>
@@ -36,7 +36,7 @@
     padding-left: 120px;
   }
 
-  #list {
+  #steps {
     font-size: 19px;
     text-align: left;
     padding-right: 120px;
