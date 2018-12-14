@@ -4,8 +4,7 @@
     <b-form-group
       horizontal
       :label-cols="4"
-      breakpoint="md"
-    >
+      breakpoint="md">
       <b-col lg="6">
         <b-form-input id="inputLive"
                   v-model.trim="mail"
@@ -32,19 +31,19 @@
         name: "authentication-page",
       computed: {
         ozuMailState () {
-          return this.mail.charAt(this.mail.length-10) == this.ozuMail.charAt(0) &&
-          this.mail.charAt(this.mail.length-9) == this.ozuMail.charAt(1) &&
-          this.mail.charAt(this.mail.length-8) == this.ozuMail.charAt(2) &&
-          this.mail.charAt(this.mail.length-7) == this.ozuMail.charAt(3) &&
-          this.mail.charAt(this.mail.length-6) == this.ozuMail.charAt(4) &&
-          this.mail.charAt(this.mail.length-5) == this.ozuMail.charAt(5) &&
-          this.mail.charAt(this.mail.length-4) == this.ozuMail.charAt(6) &&
-          this.mail.charAt(this.mail.length-3) == this.ozuMail.charAt(7) &&
-          this.mail.charAt(this.mail.length-2) == this.ozuMail.charAt(8) &&
-          this.mail.charAt(this.mail.length-1) == this.ozuMail.charAt(9) ? true : false
+          return this.mail.charAt(this.mail.length - 10) == this.ozuMail.charAt(0) &&
+            this.mail.charAt(this.mail.length - 9) == this.ozuMail.charAt(1) &&
+            this.mail.charAt(this.mail.length - 8) == this.ozuMail.charAt(2) &&
+            this.mail.charAt(this.mail.length - 7) == this.ozuMail.charAt(3) &&
+            this.mail.charAt(this.mail.length - 6) == this.ozuMail.charAt(4) &&
+            this.mail.charAt(this.mail.length - 5) == this.ozuMail.charAt(5) &&
+            this.mail.charAt(this.mail.length - 4) == this.ozuMail.charAt(6) &&
+            this.mail.charAt(this.mail.length - 3) == this.ozuMail.charAt(7) &&
+            this.mail.charAt(this.mail.length - 2) == this.ozuMail.charAt(8) &&
+            this.mail.charAt(this.mail.length - 1) == this.ozuMail.charAt(9)
         }
       },
-      data(){
+      data() {
           return {
             mail: "",
             authenticatedMail: "You have been successfully authenticated.",
@@ -57,15 +56,12 @@
             this.isMailAuthenticated= true;
             this.mail= "";
           },
-
       }
-
-
     }
 </script>
 
 <style scoped>
-  div{
+  div {
     text-align: center;
     color: black;
     font-family: Helvetica;

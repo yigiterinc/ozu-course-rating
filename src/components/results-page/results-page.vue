@@ -44,9 +44,6 @@
             this.newAverageRatingsList.push(question.average)
           })
         },
-        getResultsPromise: function () {
-          // TODO
-        }
       },
       mounted () {
         this.setNewAverageRatingsList()
