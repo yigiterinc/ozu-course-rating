@@ -1,17 +1,18 @@
 <template>
   <div id="app">
-    <hello-world></hello-world>
+    <search-page></search-page>
   </div>
 </template>
 
 <script>
-  import HelloWorld from './components/HelloWorld.vue'
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  import SearchPage from './components/search-page/search-page.vue'
+
+    export default {
+      name: 'App',
+      components: {
+        SearchPage
+      }
+    }
 </script>
 
 <style>
