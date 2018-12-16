@@ -3,17 +3,11 @@
       <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-          <p><strong>Please select your instructor first before we dive into the evaluation</strong></p>
-          <b-form-select v-model="selectedInstructor"
-                          :options="courseInstructorNames"
-                          :aria-required="true">
-          </b-form-select>
-          <br><br>
-          <p>If you want to show your name or use a nickname that is going to be displayed with you evaluation,
-          feel free to enter it below.</p>
+          <p>If you want to show your name or use a nickname that is going to be displayed with your comments,
+          feel free to enter it</p>
           <b-form-input v-model="nickname"
                         type="text"
-                        placeholder="Nickname">
+                        placeholder="Nickname (Optional)">
           </b-form-input>
           <br><br>
         </div>
@@ -57,18 +51,16 @@
 </template>
 <script>
     import Question from './question.vue'
-    import courseInstructorList from './course-instructor-list.json'
+    import courses from './courses.json'
 
     export default {
       name: 'evaluation-form',
       components: {Question},
-      //courseInstructorNames: [],  // going to be fetched from database, using the course
       data () {
         return {
-          selectedInstructor: "",
           nickname: "",
-          courseInstructorList: courseInstructorList,
-          courseInstructorNames: [],
+          courses: courses,
+          //TODO answers given should be here to submit.
       }
       },
       props: {
@@ -85,15 +77,9 @@
         getInstructorListWithCourseId: function (courseId) {
           // going to fetch the course instructors from db
         },
-        setCourseInstructorNamesFromCourseInstructorList: function () {
-          this.courseInstructorList.forEach(instructor => {
-            this.courseInstructorNames.push(instructor.instructorName)
-          })
-        }
       },
       mounted() {
         // getInstructorListWithCourseId();
-        this.setCourseInstructorNamesFromCourseInstructorList();
       }
     }
 </script>

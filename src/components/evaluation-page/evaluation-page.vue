@@ -1,12 +1,14 @@
 <template>
   <div class="evaluation-page">
     <div class="container">
-      <h3>{{ this.course.courseCode }} - {{ this.course.courseName }}</h3>
+      <h3>{{ this.searchResultsAsRatings[0].course.course_code }}
+             - {{ this.searchResultsAsRatings[0].course.course_name }}</h3>
       <hr>
       <br>
       <div class="container">
         <evaluation-form :additional-comments="this.additionalComments"
-                         :questions="this.questions" :suggestions="this.suggestions" :course="this.course">
+                         :questions="this.questions" :suggestions="this.suggestions"
+                         :course="searchResultsAsRatings[0].course">
         </evaluation-form>
       </div>
       <br>
@@ -16,8 +18,8 @@
 
 
 <script>
-  import Course from './course.json'
-  import QuestionList from './question-list.json'
+  import QuestionList from './question-list.json';
+  import SearchResultsAsRatings from '../search-page/searchResultsAsRatings.json';
   import EvaluationForm from "./evaluation-form"; // question list is going to be fetched from db by backend
 
   export default {
@@ -28,10 +30,10 @@
       // props: ['course'] // a course object is passed when it is called from search component
       data() {
         return {
-          course: Course,
           questions: QuestionList,
           additionalComments: "",
-          suggestions: ""
+          suggestions: "",
+          searchResultsAsRatings: SearchResultsAsRatings
         }
       }
     }

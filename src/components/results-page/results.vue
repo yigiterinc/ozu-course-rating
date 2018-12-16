@@ -6,8 +6,8 @@
         <result v-for="(question,index) in questions"
                   :questionText="question.questionText"
                   :question-index="index + 1"
-                  :previous-average-rating="previousAverageRatingsList[index]"
-                  :new-average-rating="newAverageRatingsList[index]"
+                  :previous-average-point="previousAveragePointsList[index]"
+                  :new-average-point="newAveragePointsList[index]"
                   :colors="colors[index]"
                   :redirected-from-evaluation-page="redirectedFromEvaluationPage">
         </result>
@@ -25,7 +25,7 @@
       components: {
         Result
       },
-      props: ['questions','newAverageRatingsList','previousAverageRatingsList',
+      props: ['questions','newAveragePointsList','previousAveragePointsList',
               'redirectedFromEvaluationPage'],
       data () {
         return {
@@ -44,9 +44,9 @@
           else return 'blue'
         },
         fillColors: function () {
-          for (let i = 0; i < this.previousAverageRatingsList.length; i++) {
-            let prevColor = this.getTextColor(this.previousAverageRatingsList[i])
-            let newColor = this.getTextColor(this.newAverageRatingsList[i])
+          for (let i = 0; i < this.previousAveragePointsList.length; i++) {
+            let prevColor = this.getTextColor(this.previousAveragePointsList[i])
+            let newColor = this.getTextColor(this.newAveragePointsList[i])
 
             this.colors.push({prevColor, newColor})
           }

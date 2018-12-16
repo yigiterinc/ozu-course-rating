@@ -1,0 +1,42 @@
+[
+  {
+    "courseCode": "CS101",
+    "courseName": "Computer Programming",
+    "instructor": {
+      "instructorName": "Reyhan Aydoğan",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS201",
+    "courseName": "Data Structures and Algorithms",
+    "instructor": {
+      "instructorName": "Hasan Sözer",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS321",
+    "courseName": "Programming Languages",
+    "instructor": {
+      "instructorName": "Furkan Kıraç",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS103",
+    "courseName": "Computer Programming for Engineers",
+    "instructor": {
+      "instructorName": "Naveed Ul Mustafa",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS103",
+    "courseName": "Computer Programming for Engineers",
+    "instructor": {
+      "instructorName": "Kübra Kalkan Çakmakçı",
+      "averageRating": 0
+    }
+  }
+]

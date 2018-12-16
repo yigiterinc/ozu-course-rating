@@ -10,9 +10,9 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-1"></div>
-          <div class="col-sm-2" v-for="rating in HIGHEST_RATING">
-            <input type="radio" :value="rating" v-model="result" >
-            <label> {{rating}} </label>
+          <div class="col-sm-2" v-for="point in HIGHEST_POINT">
+            <input type="radio" :value="point" v-model="result" >
+            <label> {{point}} </label>
           </div>
         </div>
       </div>
@@ -27,7 +27,7 @@
     data() {
       return {
         result: 0,
-        HIGHEST_RATING: 5
+        HIGHEST_POINT: 5
       }
     },
   }
