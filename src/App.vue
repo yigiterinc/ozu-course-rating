@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <results-page :redirected-from-evaluation-page="true"></results-page>
+    <home-page></home-page>
   </div>
 </template>
 
 <script>
-  import ResultsPage from './components/results-page/results-page.vue'
+  import HomePage from './components/home-page/home-page'
 
 
 export default {
   name: 'App',
   components: {
-    ResultsPage
+    HomePage
   }
 }
 </script>

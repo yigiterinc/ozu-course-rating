@@ -1,5 +1,32 @@
 <template>
+  <b-container>
   <div class="notfound-page" style="background: gray">
+    <div id="navbar">
+      <b-navbar id="navContainer" fixed="top" toggleable="lg" type="dark" variant="danger">
+
+        <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+
+        <b-navbar-brand href="#" >OzuCourseRating</b-navbar-brand>
+
+        <b-collapse is-nav id="nav_collapse">
+
+          <!-- Right aligned nav items -->
+          <b-navbar-nav class="ml-auto" >
+
+            <b-navbar-nav id="coursesSection">
+              <b-nav-item href="#">Courses</b-nav-item>
+            </b-navbar-nav>
+
+            <b-navbar-nav id="homeSection">
+              <b-nav-item href="#">Home</b-nav-item>
+            </b-navbar-nav>
+
+          </b-navbar-nav>
+
+        </b-collapse>
+      </b-navbar>
+    </div>
+
     <b-jumbotron bg-variant="white">
       <b-col>
         <b-row class="justify-content-md-center">
@@ -22,6 +49,7 @@
       </b-col>
     </b-jumbotron>
   </div>
+  </b-container>
 </template>
 
 <script>
@@ -48,6 +76,15 @@
 <style scoped>
   * {
   }
+
+  #navContainer {
+    background-color: #a30050 !important;
+  }
+
+  #coursesSection, #homeSection {
+    margin-right: 70px;
+  }
+
   b-jumbotron{
     background-size: cover;
   }

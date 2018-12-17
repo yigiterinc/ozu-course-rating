@@ -1,7 +1,7 @@
 [
   {
     "questionId": 1,
-    "questionText": "Course was beneficial for my technical and personal development",
+    "questionText": "Course was beneficial for my technical and personal development.",
     "average": 4.93
   },
   {
@@ -16,7 +16,7 @@
   },
   {
     "questionId": 4,
-    "questionText": "Course material is boring",
+    "questionText": "Course material is boring.",
     "average": 3.24
   },
   {
@@ -46,17 +46,17 @@
   },
   {
     "questionId": 10,
-    "questionText": "I would call this instructor as generous about grades",
+    "questionText": "I would call this instructor as generous about grades.",
     "average": 3.54
   },
   {
     "questionId": 11,
-    "questionText": "I think the instructor has enough knowledge of course material",
+    "questionText": "I think the instructor has enough knowledge of course material.",
     "average": 5.00
   },
   {
     "questionId": 12,
-    "questionText": "It is easy to communicate with the instructor outside the lectures",
+    "questionText": "It is easy to communicate with the instructor outside the lectures.",
     "average": 5.00
   },
   {
