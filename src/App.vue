@@ -1,18 +1,19 @@
 <template>
   <div id="app">
     <results-page :redirected-from-evaluation-page="true"></results-page>
+    <router-view/>
   </div>
 </template>
 
 <script>
-  import ResultsPage from './components/results-page/results-page.vue'
+  //import ResultsPage from './components/results-page/results-page.vue'
 
 
 export default {
   name: 'App',
-  components: {
-    ResultsPage
-  }
+  //components: {
+   // ResultsPage
+ // }
 }
 </script>
 
