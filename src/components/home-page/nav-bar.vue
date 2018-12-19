@@ -12,7 +12,7 @@
         <b-navbar-nav class="ml-auto" >
 
           <b-navbar-nav id="coursesSection">
-            <b-nav-item href="#">Courses</b-nav-item>
+            <b-nav-item to="authentication-page">Search Course</b-nav-item>
           </b-navbar-nav>
 
         </b-navbar-nav>

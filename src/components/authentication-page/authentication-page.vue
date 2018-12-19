@@ -18,7 +18,7 @@
           <br><b-button disabled variant  v-on:click="authenticateEmail">Submit</b-button>
         </b-form-invalid-feedback>
         <b-form-valid-feedback id="inputLiveFeedback">
-          <br><b-button variant  v-on:click="authenticateEmail">Submit</b-button>
+          <br><router-link to="evaluation-page"><b-button variant  v-on:click="authenticateEmail">Submit</b-button></router-link>
         </b-form-valid-feedback>
       </b-col>
     </b-form-group>

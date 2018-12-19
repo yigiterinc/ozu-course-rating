@@ -52,7 +52,7 @@
         </div>
         <div class="col-md-2"></div>
       </div>
-        <b-button type="submit" variant="success">Submit</b-button>
+        <router-link to="result-page"><b-button type="submit" variant="success">Submit</b-button></router-link>
     </b-form>
 </template>
 <script>
