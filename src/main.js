@@ -22,8 +22,7 @@ const config = {
   storageBucket: "ozu-course-rating.appspot.com",
   messagingSenderId: "553541406411"
 };
-
-firebase.initializeApp(config)
+firebase.initializeApp(config);
 
 /* eslint-disable no-new */
 new Vue({

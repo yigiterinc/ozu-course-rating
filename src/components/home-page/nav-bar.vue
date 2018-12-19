@@ -12,7 +12,9 @@
         <b-navbar-nav class="ml-auto" >
 
           <b-navbar-nav id="coursesSection">
-            <b-nav-item href="#">Courses</b-nav-item>
+            <b-nav-item href="#/search-page">Courses</b-nav-item>
+            <b-nav-item href="#/authentication-page" v-if="!isLogged">Login</b-nav-item>
+            <b-nav-item href="#" v-if="isLogged" @click="this.logOut">Log Out</b-nav-item>
           </b-navbar-nav>
 
         </b-navbar-nav>
@@ -24,8 +26,17 @@
 
 <script>
     export default {
-        name: "nav-bar"
+        name: "nav-bar",
+        probs: {
+          isLogged: false
+        },
+        methods: {
+          logOut : function(){
+              this.isLogged = false;
+        }
+        }
     }
+
 </script>
 
 <style scoped>
