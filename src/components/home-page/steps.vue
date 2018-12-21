@@ -2,7 +2,7 @@
   <b-container class="bv-example-row">
     <b-row>
       <b-col id="image">
-        <img src="../../assets/logo.png" >
+        <img id="screenshot" src="../../assets/ocrScreenshot.png" >
       </b-col>
       <b-col id="steps">
         <ul>
@@ -32,13 +32,20 @@
 
 <style scoped>
 
+  #screenshot {
+    max-width: 800px;
+    height: 390px;
+    border: 6px solid #e9ecef;
+    border-radius: 10px;
+  }
+
   #image {
-    padding-left: 120px;
+    padding-left: 20px;
   }
 
   #steps {
     font-size: 19px;
     text-align: left;
-    padding-right: 120px;
+    padding-right: 100px;
   }
 </style>
