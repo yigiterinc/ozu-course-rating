@@ -1,5 +1,266 @@
-{
-  "courseId": 1,
-  "courseCode": "CS 101",
-  "courseName": "Introduction to Programming"
-}
+[
+  {
+    "courseCode": "CS101",
+    "courseName": "computer programming",
+    "instructor": {
+      "instructorName": "Reyhan Aydoğan",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS201",
+    "courseName": "data structures and algorithms",
+    "instructor": {
+      "instructorName": "Hasan Sözer",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS321",
+    "courseName": "programming languages",
+    "instructor": {
+      "instructorName": "Furkan Kıraç",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS103",
+    "courseName": "computer programming for engineers",
+    "instructor": {
+      "instructorName": "Naveed Ul Mustafa",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS103",
+    "courseName": "computer programming for engineers",
+    "instructor": {
+      "instructorName": "Kübra Kalkan Çakmakçı",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS102",
+    "courseName": "object oriented programming",
+    "instructor": {
+      "instructorName": "Kübra Kalkan Çakmakçı",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS112",
+    "courseName": "discrete mathematics for computer science",
+    "instructor": {
+      "instructorName": "Mehmet Reha Civanlar",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS202",
+    "courseName": "databases",
+    "instructor": {
+      "instructorName": "Hüseyin Ulusoy",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS240",
+    "courseName": "computer architecture",
+    "instructor": {
+      "instructorName": "Hasan Fatih Uğurdağ",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS320",
+    "courseName": "software engineering",
+    "instructor": {
+      "instructorName": "Hasan Sözer",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS447",
+    "courseName": "computer networks",
+    "instructor": {
+      "instructorName": "Ali Cengiz Beğen",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS333",
+    "courseName": "algorithm analysis",
+    "instructor": {
+      "instructorName": "Erhan Öztop",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS350",
+    "courseName": "operating systems",
+    "instructor": {
+      "instructorName": "İsmail Arı",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS410",
+    "courseName": "automata theory",
+    "instructor": {
+      "instructorName": "Erhan Öztop",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS392",
+    "courseName": "ios application development",
+    "instructor": {
+      "instructorName": "Gün Makinabakan",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS396",
+    "courseName": "cyber security basics",
+    "instructor": {
+      "instructorName": "Orhan Gökçol",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS397",
+    "courseName": "introduction to blockchain",
+    "instructor": {
+      "instructorName": "Uğur Acar",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS409",
+    "courseName": "advanced c++ programming",
+    "instructor": {
+      "instructorName": "Furkan Kıraç",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS423",
+    "courseName": "computer vision",
+    "instructor": {
+      "instructorName": "Furkan Kıraç",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS434",
+    "courseName": "advanced object oriented programming",
+    "instructor": {
+      "instructorName": "Emre Kaplan",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS442",
+    "courseName": "computer networks security",
+    "instructor": {
+      "instructorName": "Hüseyin Ulusoy",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS445",
+    "courseName": "reinforcement learning",
+    "instructor": {
+      "instructorName": "Melih Kandemir",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS449",
+    "courseName": "introduction to natural language processing",
+    "instructor": {
+      "instructorName": "Reyyan Yeniterzi",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS450",
+    "courseName": "cloud and distributed systems",
+    "instructor": {
+      "instructorName": "İsmail Arı",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS451",
+    "courseName": "introduction to artificial intelligence",
+    "instructor": {
+      "instructorName": "Reyhan Aydoğan",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS452",
+    "courseName": "data science with python",
+    "instructor": {
+      "instructorName": "Murat Şensoy",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS454",
+    "courseName": "introduction to artificial neural network",
+    "instructor": {
+      "instructorName": "Erhan Öztop",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS456",
+    "courseName": "analysis of big data",
+    "instructor": {
+      "instructorName": "Gonca Gürsün",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS458",
+    "courseName": "introduction to statistical machine learning",
+    "instructor": {
+      "instructorName": "Cenk Demiroğlu",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS466",
+    "courseName": "introduction to deep learning",
+    "instructor": {
+      "instructorName": "Murat Şensoy",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS471",
+    "courseName": "social network analysis",
+    "instructor": {
+      "instructorName": "Gonca Gürsun",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS475",
+    "courseName": "software testing and analysis",
+    "instructor": {
+      "instructorName": "Hasan Sözer",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS100",
+    "courseName": "introduction to programming",
+    "instructor": {
+      "instructorName": "Ali Fuat Alkaya",
+      "averageRating": 0
+    }
+  }
+]
