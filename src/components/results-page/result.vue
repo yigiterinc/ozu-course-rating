@@ -5,8 +5,8 @@
         <p class="question-index"><strong>Question {{ this.questionIndex }}</strong></p>
         <p>{{ this.questionText }}</p>
         <br>
-        <average :previous-average-rating="previousAverageRating"
-                 :new-average-rating="newAverageRating"
+        <average :previous-average-point="previousAveragePoint"
+                 :new-average-point="newAveragePoint"
                  :colors="colors"
                  :redirected-from-evaluation-page="redirectedFromEvaluationPage">
         </average>
@@ -22,8 +22,8 @@
 
   export default {
     components: {Average},
-    props: ['questionText','questionIndex','previousAverageRating',
-            'newAverageRating', 'colors', 'redirectedFromEvaluationPage'],
+    props: ['questionText','questionIndex','previousAveragePoint',
+            'newAveragePoint', 'colors', 'redirectedFromEvaluationPage'],
   }
 </script>
 

@@ -1,54 +1,54 @@
 [
   {
-    "questionId": 1,
-    "questionText": "Course was beneficial for my technical and personal development."
+    "questionText": "Course was beneficial for my technical and personal development",
+    "answers": []
   },
   {
-    "questionId": 2,
-    "questionText": "I would call this course as a difficult course."
+    "questionText": "I would call this course as a difficult course.",
+    "answers": []
   },
   {
-    "questionId": 3,
-    "questionText": "I would still take this course if it was an elective."
+    "questionText": "I would still take this course if it was an elective.",
+    "answers": []
   },
   {
-    "questionId": 4,
-    "questionText": "Course material is boring."
+    "questionText": "Course material is boring",
+    "answers": []
   },
   {
-    "questionId": 5,
-    "questionText": "Exams were successful and relevant in testing my understanding of course material."
+    "questionText": "Exams were successful and relevant in testing my understanding of course material.",
+    "answers": []
   },
   {
-    "questionId": 6,
-    "questionText": "What is the overall rating of this course?"
+    "questionText": "What is the overall rating of this course?",
+    "answers": []
   },
   {
-    "questionId": 7,
-    "questionText": "Instructor’s English was sufficient."
+    "questionText": "Instructor’s English was sufficient.",
+    "answers": []
   },
   {
-    "questionId": 8,
-    "questionText": "I would recommend taking this course from this instructor to my friends."
+    "questionText": "I would recommend taking this course from this instructor to my friends.",
+    "answers": []
   },
   {
-    "questionId": 9,
-    "questionText": "Instructor was effective at presenting the course material."
+    "questionText": "Instructor was effective at presenting the course material.",
+    "answers": []
   },
   {
-    "questionId": 10,
-    "questionText": "I would call this instructor as “notu kıt” (low on grades)."
+    "questionText": "Instructor was generous about grades.",
+    "answers": []
   },
   {
-    "questionId": 11,
-    "questionText": "I think the instructor has enough knowledge of course material."
+    "questionText": "Instructor has enough knowledge of course material",
+    "answers": []
   },
   {
-    "questionId": 12,
-    "questionText": "It is easy to communicate with the instructor outside the lectures."
+    "questionText": "It is easy to communicate with the instructor outside the lectures",
+    "answers": []
   },
   {
-    "questionId": 13,
-    "questionText": "What is the overall rating of this instructor?"
+    "questionText": "What is the overall rating of this instructor?",
+    "answers": []
   }
 ]
