@@ -1,0 +1,67 @@
+[
+  {
+    "questionId": 1,
+    "questionText": "Course was beneficial for my technical and personal development.",
+    "average": 4.93
+  },
+  {
+    "questionId": 2,
+    "questionText": "I would call this course as a difficult course.",
+    "average": 4.72
+  },
+  {
+    "questionId": 3,
+    "questionText": "I would still take this course if it was an elective.",
+    "average": 4.12
+  },
+  {
+    "questionId": 4,
+    "questionText": "Course material is boring.",
+    "average": 3.24
+  },
+  {
+    "questionId": 5,
+    "questionText": "Exams were successful and relevant in testing my understanding of course material.",
+    "average": 3.67
+  },
+  {
+    "questionId": 6,
+    "questionText": "What is the overall rating of this course?",
+    "average": 2.32
+  },
+  {
+    "questionId": 7,
+    "questionText": "Instructor’s English was sufficient.",
+    "average": 0.72
+  },
+  {
+    "questionId": 8,
+    "questionText": "I would recommend taking this course from this instructor to my friends.",
+    "average": 3.48
+  },
+  {
+    "questionId": 9,
+    "questionText": "Instructor was effective at presenting the course material.",
+    "average": 3.51
+  },
+  {
+    "questionId": 10,
+    "questionText": "I would call this instructor as generous about grades.",
+    "average": 3.54
+  },
+  {
+    "questionId": 11,
+    "questionText": "I think the instructor has enough knowledge of course material.",
+    "average": 5.00
+  },
+  {
+    "questionId": 12,
+    "questionText": "It is easy to communicate with the instructor outside the lectures.",
+    "average": 5.00
+  },
+  {
+    "questionId": 13,
+    "questionText": "What is the overall rating of this instructor?",
+    "average": 4.31
+  }
+]

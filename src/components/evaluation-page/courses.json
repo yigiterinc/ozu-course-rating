@@ -1,0 +1,74 @@
+[
+  {
+    "courseCode": "CS101",
+    "courseName": "computer programming",
+    "instructor": {
+      "instructorName": "Reyhan Aydoğan",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS201",
+    "courseName": "data structures and algorithms",
+    "instructor": {
+      "instructorName": "Hasan Sözer",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS321",
+    "courseName": "programming languages",
+    "instructor": {
+      "instructorName": "Furkan Kıraç",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS103",
+    "courseName": "computer programming for engineers",
+    "instructor": {
+      "instructorName": "Naveed Ul Mustafa",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS103",
+    "courseName": "computer programming for engineers",
+    "instructor": {
+      "instructorName": "Kübra Kalkan Çakmakçı",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS103",
+    "courseName": "computer programming for engineers",
+    "instructor": {
+      "instructorName": "ahmet",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "ENG102",
+    "courseName": "english",
+    "instructor": {
+      "instructorName": "ayfer hoca",
+      "averageRating": 0
+    }
+  },
+  {
+    "courseCode": "CS320",
+    "courseName": "software engineering",
+    "instructor": {
+      "instructorName": "Hasan Sözer",
+      "averageRating": 0
+    }
+  },
+  {
+  "courseCode": "HIST103",
+  "courseName": "history of civilizations",
+  "instructor": {
+    "instructorName": "Feray Coşkun",
+    "averageRating": 0
+  }
+}
+]
