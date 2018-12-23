@@ -41,7 +41,6 @@
   import EvaluationResults from './evaluation-results.json';
   import Results from './results.vue';
   import QuestionList from '../evaluation-page/question-list.json';
-  import searchResultsAsRating from '../search-page/searchResultsAsRatings.json';
 
     export default {
     components: {
@@ -55,7 +54,7 @@
           evaluationResults: EvaluationResults,   // TODO this will be fetched from db via results-page dto
           name: "results-page",
           questions: QuestionList,
-          rating: searchResultsAsRating,
+          rating: {},
           chosenInstructor: "Reyhan Aydoğan",
           //props: [previousAveragePointsList, course, chosenInstructor], // TODO previous component will calculate average ratings and pass it
           previousAveragePointsList: [4.52, 5.00, 1.24, 2.12, 4.12, 2.24, 1.44,

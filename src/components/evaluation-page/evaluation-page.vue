@@ -44,7 +44,6 @@
 
 
 <script>
-  import SearchResultsAsRatings from '../search-page/searchResultsAsRatings.json';
   import EvaluationForm from "./evaluation-form"; // question list is going to be fetched from db by backend
 
   export default {
@@ -58,7 +57,7 @@
           questions: [],
           additionalComments: "",
           suggestions: "",
-          searchResultsAsRatings: SearchResultsAsRatings //TODO pass this from search page
+          searchResultsAsRatings: {} //TODO pass this from search page
         }
       },
     methods: {
