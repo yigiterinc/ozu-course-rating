@@ -1,5 +1,3 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import BootstrapVue from 'bootstrap-vue';
 import App from './App';
@@ -19,13 +17,13 @@ Vue.config.productionTip = false;
 
 // Initialize Firebase
 const config = {
-    apiKey: 'AIzaSyALyabHb4nbmFkMOmm21Rt4OxAgYysWUVM',
-    authDomain: 'ozu-course-rating.firebaseapp.com',
-    databaseURL: 'https://ozu-course-rating.firebaseio.com',
-    projectId: 'ozu-course-rating',
-    storageBucket: 'ozu-course-rating.appspot.com',
-    messagingSenderId: '553541406411'
-  };
+  apiKey: 'AIzaSyALyabHb4nbmFkMOmm21Rt4OxAgYysWUVM',
+  authDomain: 'ozu-course-rating.firebaseapp.com',
+  databaseURL: 'https://ozu-course-rating.firebaseio.com',
+  projectId: 'ozu-course-rating',
+  storageBucket: 'ozu-course-rating.appspot.com',
+  messagingSenderId: '553541406411'
+};
 
 firebase.initializeApp(config);
 export const firebaseDb = firebase.firestore();
@@ -119,7 +117,7 @@ new Vue({
         });
       });
     },
-    getCourseWithCourseCodeAndInstructorNamePromise: function(courseCode, instructorName) {  // TODO CS diye de aratılabilir direk boşluğu sil. ya ikisini de sil ya boşluksuz koy
+    getCourseWithCourseCodeAndInstructorNamePromise: function(courseCode, instructorName) {
       let courses = [];
       return new Promise((resolve, reject) => {
         firebaseDb.collection('courses')
@@ -156,9 +154,9 @@ new Vue({
           .where('course.courseCode', '==', courseCode)
           .where('course.instructor.instructorName', '==', instructorName)
           .get().then(snapshot => {
-            let size = snapshot.docs.length;
-            resolve(!(size === 0));
-          }).catch(error => {
+          let size = snapshot.docs.length;
+          resolve(!(size === 0));
+        }).catch(error => {
           console.log(error);
           reject();
         });
@@ -207,11 +205,3 @@ new Vue({
     );
   }
 });
-// TODO getAllRatings(searchInput) where course code or name
-// TODO getAllQuestionsForRating(rating)
-// TODO submitEvaluation(answers[])
-// TODO getAllAnswersForRating(rating)
-// TODO getRatingCourseWith(courseCode, instructorName)
-// TODO calculateAverageForRating(rating)
-// TODO addNicknameToLoggedInStudent(nickname)
-

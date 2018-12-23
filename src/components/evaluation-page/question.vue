@@ -11,7 +11,7 @@
         <div class="row">
           <div class="col-sm-1"></div>
           <div class="col-sm-2" v-for="point in HIGHEST_POINT">
-            <input type="radio" :value="point" v-model="result" >
+            <input type="radio" :value="point" v-model="result">
             <label> {{point}} </label>
           </div>
         </div>

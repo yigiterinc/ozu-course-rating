@@ -45,6 +45,18 @@
             this.newAveragePointsList.push(question.average)
           })
         },
+        getAllAnswersForRating: function(rating) {
+          const questions = rating.questions;
+          const answers = [[]];
+          questions.forEach(question => {
+            answers.push(question.answers);
+          });
+          return answers;
+        },
+        getAnswersForQuestion: function(rating, questionNumber) { // for example: 3rd question, starting from 1
+          const questions = rating.questions;
+          return questions[questionNumber - 1].answers;
+        },
       },
       mounted () {
         this.setNewAverageRatingsList()

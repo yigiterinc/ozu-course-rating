@@ -1,17 +1,18 @@
 <template>
   <div id="app">
-    <evaluation-page></evaluation-page>
+    <search-page></search-page>
   </div>
 </template>
 
 <script>
   import ResultsPage from './components/results-page/results-page.vue'
   import EvaluationPage from './components/evaluation-page/evaluation-page.vue'
+  import SearchPage from './components/search-page/search-page.vue'
 
 export default {
   name: 'App',
   components: {
-    ResultsPage,
+    SearchPage,
     EvaluationPage
   }
 }

@@ -18,7 +18,7 @@
         <div class="col-md-1"></div>
         <div class="col-md-10">
           <question v-for="(question,index) in questions"
-                    :questionText="question.questionText" :question-index="index + 1">
+                    :questionText="question" :question-index="index + 1">
           </question>
         </div>
         <br>
@@ -71,8 +71,23 @@
       },
       methods: {
         onSubmit(evt) {
-          // submit user's answers to database. foreach question, call submitAnswer, submit nickname
-          // redirect to results page for that course
+          this.submitEvaluation();
+        },
+        submitEvaluation: function(rating, answers, suggestionAndComment) {
+          return new Promise((resolve, reject) => {
+            firebaseDb.collection('ratings')
+              .where('course.courseName', '==', courseNameLowerCase)
+              .get().then(ratings => {
+              ratings.forEach(rating => {
+                ratingList.push(rating.data());
+              });
+              resolve(ratingList);
+            }).catch(error => {
+              console.log('An error occurred while ' +
+                'getting ratings with course name' + error);
+              reject();
+            });
+          });
         },
         getInstructorListWithCourseId: function (courseId) {
           // going to fetch the course instructors from db

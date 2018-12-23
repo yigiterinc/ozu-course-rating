@@ -1,0 +1,62 @@
+[
+  {
+    "course": {
+      "course_code": "CS 101",
+      "course_name": "Introduction to Programming",
+      "instructor_name": "Reyhan Aydoğan"
+    },
+    "questions": [ {
+      "questionText": "Course was beneficial for my technical and personal development",
+      "answers": []
+    },
+      {
+        "questionText": "I would call this course as a difficult course.",
+        "answers": []
+      },
+      {
+        "questionText": "I would still take this course if it was an elective.",
+        "answers": []
+      },
+      {
+        "questionText": "Course material is boring",
+        "answers": []
+      },
+      {
+        "questionText": "Exams were successful and relevant in testing my understanding of course material.",
+        "answers": []
+      },
+      {
+        "questionText": "What is the overall rating of this course?",
+        "answers": []
+      },
+      {
+        "questionText": "Instructor’s English was sufficient.",
+        "answers": []
+      },
+      {
+        "questionText": "I would recommend taking this course from this instructor to my friends.",
+        "answers": []
+      },
+      {
+        "questionText": "Instructor was effective at presenting the course material.",
+        "answers": []
+      },
+      {
+        "questionText": "Instructor was generous about grades.",
+        "answers": []
+      },
+      {
+        "questionText": "Instructor has enough knowledge of course material",
+        "answers": []
+      },
+      {
+        "questionText": "It is easy to communicate with the instructor outside the lectures",
+        "answers": []
+      },
+      {
+        "questionText": "What is the overall rating of this instructor?",
+        "answers": []
+      }],
+    "commentsAndSuggestions": []
+  }
+]
