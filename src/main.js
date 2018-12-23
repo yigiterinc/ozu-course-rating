@@ -2,6 +2,7 @@ import Vue from 'vue';
 import BootstrapVue from 'bootstrap-vue';
 import App from './App';
 import router from './router';
+
 import firebase from 'firebase';
 import 'firebase/firestore';
 
