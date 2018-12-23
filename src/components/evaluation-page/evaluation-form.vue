@@ -51,7 +51,6 @@
 </template>
 <script>
     import Question from './question.vue'
-    import courses from './courses.json'
 
     export default {
       name: 'evaluation-form',
@@ -59,15 +58,13 @@
       data () {
         return {
           nickname: "",
-          courses: courses,
-          //TODO answers given should be here to submit.
-      }
+        }
       },
       props: {
         questions: {},
         additionalComments: {},
         suggestions: {},
-        course: {}
+        rating: {}
       },
       methods: {
         onSubmit(evt) {

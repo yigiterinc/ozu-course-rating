@@ -1,20 +1,13 @@
 <template>
   <div id="app">
-    <search-page></search-page>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-  import ResultsPage from './components/results-page/results-page.vue'
-  import EvaluationPage from './components/evaluation-page/evaluation-page.vue'
-  import SearchPage from './components/search-page/search-page.vue'
-  import HomePage from './components/home-page/home-page'
 
 export default {
   name: 'App',
-  components: {
-    SearchPage,
-  }
 }
 </script>
 

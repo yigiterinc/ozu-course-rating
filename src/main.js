@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import BootstrapVue from 'bootstrap-vue';
 import App from './App';
-import router from './router';
 
 import firebase from 'firebase';
 import 'firebase/firestore';
@@ -29,6 +28,53 @@ const config = {
 firebase.initializeApp(config);
 export const firebaseDb = firebase.firestore();
 
+import Router from 'vue-router';
+import ResultsPage from '../src/components/results-page/results-page.vue';
+import EvaluationPage from '../src/components/evaluation-page/evaluation-page.vue';
+import AuthenticationPage from '../src/components/authentication-page/authentication-page.vue';
+import HomePage from '../src/components/home-page/home-page.vue';
+import NotFoundPage from '../src/components/not-found-page/not-found-page.vue';
+import SearchPage from '../src/components/search-page/search-page.vue';
+
+Vue.use(Router);
+
+const router = new Router({
+  mode: 'history',
+  routes: [
+    {
+      path: '/',
+      component: HomePage
+    },
+    {
+      path: '/authentication-page',
+      component: AuthenticationPage
+    },
+    {
+      path: '/evaluation-page',
+      component: EvaluationPage,
+    },
+    {
+      path: '/results-page',
+      component: ResultsPage
+    },
+    {
+      path: '/search-page',
+      component: SearchPage
+    },
+    {
+      path: '/not-found-page',
+      component: NotFoundPage
+    },
+    {
+      path: '*',
+      redirect: '/not-found-page'
+    }
+  ],
+});
+
+router.beforeEach((to, from, next) => {
+  next();
+});
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
@@ -99,7 +145,7 @@ new Vue({
           });
           resolve(studentFound);
         }).catch(error => {
-          console.log('Student with mail address: ' + studentEmail + ' not found.');
+          console.log('Student with studentEmail address: ' + studentEmail + ' NotFoundPage found.');
           reject(error);
         });
       });
@@ -130,7 +176,7 @@ new Vue({
           });
           resolve(courses);
         }).catch(error => {
-          console.error('Document not found');
+          console.error('Document NotFoundPage found');
           reject();
         });
       });
@@ -141,7 +187,7 @@ new Vue({
         (course.courseCode,
           course.instructor.instructorName).then(result => {
           if (result.length === 0 || typeof result === 'undefined') {
-            console.log('Course not found, adding to db');
+            console.log('Course NotFoundPage found, adding to db');
             this.addCourse(course.courseCode,
               course.courseName,
               course.instructor.instructorName);

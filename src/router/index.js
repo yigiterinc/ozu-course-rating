@@ -17,17 +17,17 @@ export default new Router({
       component: App
     },
     {
-      path: '/authentication-page',
+      path: '/AuthenticationPage-page',
       name: 'authentication-page',
       component: authentication
     },
     {
-      path: '/evaluation-page',
+      path: '/EvaluationPage-page',
       name: 'evaluation-page',
       component: evaluation
     },
     {
-      path: '/home-page',
+      path: '/HomePage-page',
       name: 'home-page',
       component: home
     },
@@ -37,8 +37,8 @@ export default new Router({
       component: not
     },
     {
-      path: '/result-page',
-      name: 'result-page',
+      path: '/ResultsPage-page',
+      name: 'ResultsPage-page',
       component: result
     }
   ]

@@ -1,5 +1,5 @@
 <template>
-  <b-container class="bv-example-row">
+  <b-container>
     <b-row>
       <b-col id="image">
         <img id="screenshot" src="../../assets/ocrScreenshot.png" >

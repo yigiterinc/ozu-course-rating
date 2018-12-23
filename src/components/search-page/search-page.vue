@@ -1,8 +1,10 @@
 <template>
   <div id="search-page">
     <div class="container">
+      <nav-bar></nav-bar>
       <b-form>
-        <p>You can search with either course code or course name to evaluate or see the current results.</p>
+        <p>You can search with either course code or course name to evaluate or see the current results.
+       Choose your course then click one of the below buttons.</p>
         <b-form-input v-model="searchedFor"
                       type="text"
                       placeholder="Enter a course">
@@ -11,7 +13,7 @@
         <b-button variant="success" v-on:click="submitted">Submit</b-button>
         <br><br>
       </b-form>
-      Selected: <strong>{{ selected }}</strong>
+      Selected: <strong>{{ selected }}</strong> <br>
     </div>
 
     <div v-if="hasSubmitted">
@@ -23,10 +25,12 @@
               <input type="radio"
                      name="selectCourse"
                      v-bind:value="tableContents[row.index]"
-                     v-model="selected"
-                     v-on:click="resetSelected()">
+                     v-model="selected">
             </template>
           </b-table>
+
+          <b-button variant="secondary" v-on:click="addRatingToStoreAndRedirectTo('/evaluation-page')"> Evaluate </b-button>
+          <b-button variant="secondary" v-on:click="addRatingToStoreAndRedirectTo('/results-page')">See Results</b-button>
         </div>
         <div class="col-lg-2"></div>
       </div>
@@ -36,8 +40,12 @@
 
 <script>
   import {firebaseDb} from '../../main.js'
+  import NavBar from '../nav-bar/nav-bar.vue'
 
   export default {
+    components: {
+      NavBar
+    },
     data() {
       return {
         name: "search-page",
@@ -47,7 +55,7 @@
           'select'],
         tableContents: [],
         ratingsAsSearchResult: [],
-        selected: {},
+        selected: {},  //TODO add selectedRating to vuex store
       }
     },
     methods: {
@@ -66,13 +74,9 @@
           );
         }
       },
-      resetSelected: function() {
-        this.selected = {};
-      },
       updateTableContents: function() {
         this.tableContents = [];
         this.ratingsAsSearchResult.forEach(rating => {
-          console.log(rating);
           this.tableContents.push({
             course_code: rating.course.courseCode,
             course_name: rating.course.courseName,
@@ -132,6 +136,16 @@
           return this.getRatingsWithCourseNamePromise(searchInput);
         }
       },
+      findSelectedRatingAndAddToStore: function() {
+        this.ratingsAsSearchResult.forEach(rating => {
+          if (rating.course.instructor.instructorName === this.selected.instructor_name)
+            return rating;
+        })
+      },
+      addRatingToStoreAndRedirectTo: function(nextLocation) {
+        //TODO findSelectedRatingAndAddToStore
+        location.assign(nextLocation);
+      }
     },
     mounted () {
       this.updateTableContents();

@@ -1,29 +1,6 @@
 <template>
   <div class="results-page">
-    <b-navbar id="navContainer" fixed="top" toggleable="lg" type="dark" variant="danger">
-
-      <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-
-      <b-navbar-brand href="#" >OzuCourseRating</b-navbar-brand>
-
-      <b-collapse is-nav id="nav_collapse">
-
-        <!-- Right aligned nav items -->
-        <b-navbar-nav class="ml-auto" >
-
-          <b-navbar-nav id="coursesSection">
-            <b-nav-item href="#">Courses</b-nav-item>
-          </b-navbar-nav>
-
-          <b-navbar-nav id="homeSection">
-            <b-nav-item href="#">Home</b-nav-item>
-          </b-navbar-nav>
-
-        </b-navbar-nav>
-
-      </b-collapse>
-    </b-navbar>
-
+    <nav-bar></nav-bar>
     <div class="container">
       <h3>{{ this.rating[0].course.course_code }} - {{ this.rating[0].course.course_name }}</h3>
       <hr>
@@ -40,13 +17,15 @@
 <script>
   import EvaluationResults from './evaluation-results.json';
   import Results from './results.vue';
-  import QuestionList from '../evaluation-page/question-list.json';
+  import QuestionList from '../evaluation-page/question-list.json'; //TODO change with rating's questions
+  import NavBar from '../nav-bar/nav-bar.vue';
 
     export default {
     components: {
-      results: Results
+      Results,
+      NavBar
     },
-      props: ['redirectedFromEvaluationPage'], // if true, previous page is evaluation page else search page
+      props: ['redirectedFromEvaluationPage', 'Rating'], // if true, previous page is EvaluationPage page else search page
       // rating is going to be a prop in here
 
       data() {
@@ -54,11 +33,11 @@
           evaluationResults: EvaluationResults,   // TODO this will be fetched from db via results-page dto
           name: "results-page",
           questions: QuestionList,
-          rating: {},
+          rating: this.Rating,
           chosenInstructor: "Reyhan Aydoğan",
           //props: [previousAveragePointsList, course, chosenInstructor], // TODO previous component will calculate average ratings and pass it
           previousAveragePointsList: [4.52, 5.00, 1.24, 2.12, 4.12, 2.24, 1.44,
-            4.21, 1.11, 0.23, 0.73, 2.32, 1.24], // TODO passed from evaluation-page
+            4.21, 1.11, 0.23, 0.73, 2.32, 1.24], // TODO passed from EvaluationPage-page
           newAveragePointsList: [],
         }
      },

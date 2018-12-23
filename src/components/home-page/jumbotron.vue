@@ -1,7 +1,7 @@
 <template>
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-4">Welcome!</h1>
+      <h1>Welcome!</h1>
       <p class="lead">
         OzuCourseRating is a platform which allows OzU students to share their previous experiences about
         the courses they have taken.
@@ -18,8 +18,4 @@
 </script>
 
 <style scoped>
-
-  .jumbo {
-    background: #F5F5DC;
-  }
 </style>
