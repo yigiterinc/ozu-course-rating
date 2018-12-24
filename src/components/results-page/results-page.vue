@@ -7,7 +7,7 @@
       <br>
     <results :questions="questions"
              :new-average-points-list="getNewAverageRatingsList()"
-             :previous-average-points-list="prevAverage.split(',')"
+             :previous-average-points-list="getSplitted(prevAverage)"
              :redirectedFromEvaluationPage="redirectedFromEvaluationPage">
     </results>
     </div>
@@ -65,6 +65,10 @@
               reject('An error occurred while getting the rating with id:' + error);
             })
           })
+        },
+        getSplitted: function (string) {
+          if (string === '' || typeof string === "undefined") return this.getNewAverageRatingsList();
+          return string.split(',');
         }
       },
       mounted () {

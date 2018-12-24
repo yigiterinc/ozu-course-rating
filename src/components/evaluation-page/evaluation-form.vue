@@ -26,28 +26,6 @@
         <br>
         <div class="col-md-1"></div>
       </div>
-        <p class="comments-label"><strong>Additional Comments and Suggestions</strong></p>
-        <hr>
-      <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-          <p>If you have any additional comments please write them below.</p>
-          <b-form-textarea v-model="additionalComments"
-                           placeholder="Write your answer to here"
-                           :rows="3"
-                           :max-rows="6">
-         </b-form-textarea>
-          <br>
-          <p>What would you suggest to other students who aim to pass this course with a high grade?</p>
-          <b-form-textarea v-model="suggestions"
-                           placeholder="Write your answer to here"
-                           :rows="3"
-                           :max-rows="6">
-          </b-form-textarea>
-          <br>
-        </div>
-        <div class="col-md-2"></div>
-      </div>
         <b-button variant="success" v-on:click="onSubmit">Submit</b-button>
     </b-form>
 </template>
