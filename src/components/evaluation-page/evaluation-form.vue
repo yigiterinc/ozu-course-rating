@@ -75,18 +75,34 @@
       methods: {
         onSubmit(evt) {
           console.log('im in');
-          this.updateCommentsAndSuggestions();
+          //this.updateCommentsAndSuggestions();
           this.submitEvaluation().then(() => {
-            //this.$router.push({ path: '/results-page/' + this.ratingId});
+            const prevAvgs = this.getAverages();
+            const path = '/results-page/' + this.ratingId + '/true/' + prevAvgs;
+            this.$router.push({ path: path});
             console.log('returned from promise');
           });
         },
         submitEvaluation: function() { //TODO submit answers, suggestionsAndRatings with nickname
           console.log('im in');
+          let nickname = this.nickname;
+          let comments = this.additionalComments;
+          let suggestions = this.suggestions;
+
+          if (typeof nickname === 'undefined')
+            nickname = '.';
+          if (typeof comments === 'undefined')
+            comments = '.';
+          if (typeof suggestions === 'undefined')
+            suggestions = '.';
+
+          const ratingsSuggestions = {nickname, comments, suggestions};
+          //this.rating.commentsAndSuggestions.push(ratingsSuggestions);
+          console.log(this.rating.commentsAndSuggestions);
           if (this.rating.commentsAndSuggestions) {
             return new Promise((resolve,reject) => {
               firebaseDb.collection('ratings/').doc(this.ratingId).update({
-                //  commentsAndSuggestions: this.rating.commentsAndSuggestions,
+                  //commentsAndSuggestions: this.rating.commentsAndSuggestions,
                   questions: this.rating.questions,
                 }
               ).then(() => {
@@ -112,7 +128,18 @@
           this.rating.questions[index].answers.push(answer);
           console.log(this.rating.questions[index].answers);
         },
-        mounted() {
+        getAverages: function() {
+          let averages = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+          for (let i = 0; i < this.rating.questions.length; i++) {
+            let question = this.rating.questions[i];
+            let sumOfQuestion = 0;
+            for (let j = 0; j < question.answers.length; j++) {
+              sumOfQuestion += question.answers[j];
+            }
+            if (question.answers.length !== 0)
+              averages[i] = sumOfQuestion / question.answers.length;
+          }
+          return averages;
         }
       },
     }

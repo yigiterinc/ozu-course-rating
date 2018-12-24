@@ -4,6 +4,7 @@
       <div class="col-md-1"></div>
       <div class="col-md-10">
         <result v-for="(question,index) in questions"
+                v-if="question.questionText"
                   :questionText="question.questionText"
                   :question-index="index + 1"
                   :previous-average-point="previousAveragePointsList[index]"
@@ -36,17 +37,17 @@
       methods: {
         getTextColor: function (averageRating) {
           if (averageRating <= 2.00)
-            return 'gray'
+            return 'gray';
           else if (averageRating < 4)
-            return 'deeppink'
+            return 'deeppink';
           else if (averageRating < 5.00)
-            return 'green'
+            return 'green';
           else return 'blue'
         },
         fillColors: function () {
           for (let i = 0; i < this.previousAveragePointsList.length; i++) {
-            let prevColor = this.getTextColor(this.previousAveragePointsList[i])
-            let newColor = this.getTextColor(this.newAveragePointsList[i])
+            let prevColor = this.getTextColor(this.previousAveragePointsList[i]);
+            let newColor = this.getTextColor(this.newAveragePointsList[i]);
 
             this.colors.push({prevColor, newColor})
           }

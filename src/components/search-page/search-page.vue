@@ -13,7 +13,6 @@
         <b-button variant="success" v-on:click="submitted">Submit</b-button>
         <br><br>
       </b-form>
-      Selected: <strong>{{ selected }}</strong> <br>
     </div>
 
     <div v-if="hasSubmitted">
@@ -59,7 +58,7 @@
         tableContents: [],
         ratingsAsSearchResult: [],
         ratingId : 0,
-        selected: {},  //TODO add selectedRating to vuex store
+        selected: {},
       }
     },
     methods: {
@@ -94,7 +93,11 @@
           .then(id => {
             this.ratingId = id;
           });
-        return '/' + url + '/' + this.ratingId;
+        let newUrl = '/' + url + '/' + this.ratingId;
+        if (url === 'results-page')
+          newUrl += '/false';
+
+        return newUrl;
       },
       getRefIdForSelectedRatingPromise: function(courseCode, instructorName) {
         if (courseCode && instructorName) {

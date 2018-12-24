@@ -17,12 +17,12 @@ Vue.config.productionTip = false;
 
 // Initialize Firebase
 const config = {
-  apiKey: "AIzaSyCaxUPSK9NfdEiF3ZrmrsbkBQtJ2wPnokg",
-  authDomain: "ozu-course-rating-2-a9240.firebaseapp.com",
-  databaseURL: "https://ozu-course-rating-2-a9240.firebaseio.com",
-  projectId: "ozu-course-rating-2-a9240",
-  storageBucket: "ozu-course-rating-2-a9240.appspot.com",
-  messagingSenderId: "742359750855"
+  apiKey: 'AIzaSyCaxUPSK9NfdEiF3ZrmrsbkBQtJ2wPnokg',
+  authDomain: 'ozu-course-rating-2-a9240.firebaseapp.com',
+  databaseURL: 'https://ozu-course-rating-2-a9240.firebaseio.com',
+  projectId: 'ozu-course-rating-2-a9240',
+  storageBucket: 'ozu-course-rating-2-a9240.appspot.com',
+  messagingSenderId: '742359750855'
 };
 
 firebase.initializeApp(config);
@@ -58,7 +58,7 @@ const router = new Router({
       props: true
     },
     {
-      path: '/results-page/:ratingId',
+      path: '/results-page/:ratingId/:redirectedFromEvaluationPage/:prevAverage?',
       name: 'results-page',
       component: ResultsPage,
       props: true
