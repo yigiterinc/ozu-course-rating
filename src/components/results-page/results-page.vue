@@ -2,22 +2,21 @@
   <div class="results-page">
     <nav-bar></nav-bar>
     <div class="container">
-      <h3>{{ this.rating[0].course.course_code }} - {{ this.rating[0].course.course_name }}</h3>
+      <h3>{{ this.rating.course.courseCode }} - {{ this.rating.course.courseName }}</h3>
       <hr>
       <br>
     <results :questions="questions"
-             :new-average-points-list="newAveragePointsList"
-             :previous-average-points-list="previousAveragePointsList"
-              :redirectedFromEvaluationPage="redirectedFromEvaluationPage">
+             :new-average-points-list="getNewAverageRatingsList()"
+             :previous-average-points-list="prevAverage.split(',')"
+             :redirectedFromEvaluationPage="redirectedFromEvaluationPage">
     </results>
     </div>
   </div>
 </template>
 
 <script>
-  import EvaluationResults from './evaluation-results.json';
   import Results from './results.vue';
-  import QuestionList from '../evaluation-page/question-list.json'; //TODO change with rating's questions
+  import {firebaseDb} from '../../main.js'
   import NavBar from '../nav-bar/nav-bar.vue';
 
     export default {
@@ -25,56 +24,60 @@
       Results,
       NavBar
     },
-      props: ['redirectedFromEvaluationPage', 'Rating'], // if true, previous page is EvaluationPage page else search page
-      // rating is going to be a prop in here
+      props: ['redirectedFromEvaluationPage', 'Rating', 'ratingId', 'prevAverage'],
 
       data() {
         return {
-          evaluationResults: EvaluationResults,   // TODO this will be fetched from db via results-page dto
           name: "results-page",
-          questions: QuestionList,
+          questions: [],
           rating: this.Rating,
-          chosenInstructor: "Reyhan Aydoğan",
-          //props: [previousAveragePointsList, course, chosenInstructor], // TODO previous component will calculate average ratings and pass it
-          previousAveragePointsList: [4.52, 5.00, 1.24, 2.12, 4.12, 2.24, 1.44,
-            4.21, 1.11, 0.23, 0.73, 2.32, 1.24], // TODO passed from EvaluationPage-page
-          newAveragePointsList: [],
+          newAveragePointsList: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         }
      },
       methods: {
-        setNewAverageRatingsList: function () {
-          this.evaluationResults.forEach(question => {
-            this.newAveragePointsList.push(question.average)
+        getNewAverageRatingsList: function () {
+          for (let i = 0; i < this.rating.questions.length; i++) {
+            let question = this.rating.questions[i];
+            let sumOfQuestion = 0;
+            for (let j = 0; j < question.answers.length; j++) {
+              sumOfQuestion += question.answers[j];
+            }
+            if (question.answers.length !== 0)
+              this.newAveragePointsList[i] = sumOfQuestion / question.answers.length;
+          }
+          console.log(this.newAveragePointsList);
+          return this.newAveragePointsList;
+        },
+        setQuestionsFromRating: function() {
+          this.rating.questions.forEach(question => {
+            this.questions.push(question.questionText);
           })
         },
-        getAllAnswersForRating: function(rating) {
-          const questions = rating.questions;
-          const answers = [[]];
-          questions.forEach(question => {
-            answers.push(question.answers);
-          });
-          return answers;
-        },
-        getAnswersForQuestion: function(rating, questionNumber) { // for example: 3rd question, starting from 1
-          const questions = rating.questions;
-          return questions[questionNumber - 1].answers;
-        },
+        getRatingWithId: function() {
+          console.log('getting rating');
+          return new Promise((resolve,reject) => {
+            firebaseDb.collection('/ratings')
+              .doc(this.ratingId)
+              .get().then(rating => {
+              console.log(rating.data());
+              resolve(rating);
+            }).catch(error => {
+              reject('An error occurred while getting the rating with id:' + error);
+            })
+          })
+        }
       },
       mounted () {
-        this.setNewAverageRatingsList()
+        this.getRatingWithId().then(rating => {
+          this.rating = rating.data();
+          this.questions = rating.data().questions;
+          this.setQuestionsFromRating();
+        });
       }
     }
 </script>
 
 <style scoped>
-  #navContainer {
-    background-color: #a30050 !important;
-  }
-
-  #coursesSection, #homeSection {
-    margin-right: 70px;
-  }
-
   .container {
     padding-top: 20px;
   }

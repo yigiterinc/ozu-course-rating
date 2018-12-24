@@ -13,7 +13,6 @@
         <b-button variant="success" v-on:click="submitted">Submit</b-button>
         <br><br>
       </b-form>
-      Selected: <strong>{{ selected }}</strong> <br>
     </div>
 
     <div v-if="hasSubmitted">
@@ -28,9 +27,12 @@
                      v-model="selected">
             </template>
           </b-table>
-
-          <b-button variant="secondary" v-on:click="addRatingToStoreAndRedirectTo('/evaluation-page')"> Evaluate </b-button>
-          <b-button variant="secondary" v-on:click="addRatingToStoreAndRedirectTo('/results-page')">See Results</b-button>
+          <router-link :to="getUrlTo('evaluation-page')">
+            <b-button variant="secondary"> Evaluate </b-button>
+          </router-link>
+          <router-link :to="getUrlTo('results-page')">
+            <b-button variant="secondary">See Results</b-button>
+          </router-link>
         </div>
         <div class="col-lg-2"></div>
       </div>
@@ -55,7 +57,8 @@
           'select'],
         tableContents: [],
         ratingsAsSearchResult: [],
-        selected: {},  //TODO add selectedRating to vuex store
+        ratingId : 0,
+        selected: {},
       }
     },
     methods: {
@@ -83,6 +86,36 @@
             instructor_name: rating.course.instructor.instructorName
           });
         })
+      },
+      getUrlTo: function (url) {
+        if (this.selected.course_code && this.selected.course_name)
+        this.getRefIdForSelectedRatingPromise(this.selected.course_code, this.selected.instructor_name)
+          .then(id => {
+            this.ratingId = id;
+          });
+        let newUrl = '/' + url + '/' + this.ratingId;
+        if (url === 'results-page')
+          newUrl += '/false';
+
+        return newUrl;
+      },
+      getRefIdForSelectedRatingPromise: function(courseCode, instructorName) {
+        if (courseCode && instructorName) {
+          const courseCodeWithoutSpaces = courseCode.replace(/\s/g, '');
+          const courseCodeUpperCase = courseCodeWithoutSpaces.toUpperCase();
+          return new Promise((resolve, reject) => {
+            firebaseDb.collection('ratings')
+              .where('course.courseCode', '==', courseCodeUpperCase)
+              .where('course.instructor.instructorName', '==', instructorName)
+              .get().then(rating => {
+                resolve(rating.docs[0].id);
+            }).catch(error => {
+              console.log('An error occurred while ' +
+                'getting ref id' + error);
+              reject();
+            });
+          });
+        }
       },
       isCourseCode: function(string) {
         const spacesRemoved = string.replace(/\s/g, ''); // removes the white spaces
@@ -136,16 +169,6 @@
           return this.getRatingsWithCourseNamePromise(searchInput);
         }
       },
-      findSelectedRatingAndAddToStore: function() {
-        this.ratingsAsSearchResult.forEach(rating => {
-          if (rating.course.instructor.instructorName === this.selected.instructor_name)
-            return rating;
-        })
-      },
-      addRatingToStoreAndRedirectTo: function(nextLocation) {
-        //TODO findSelectedRatingAndAddToStore
-        location.assign(nextLocation);
-      }
     },
     mounted () {
       this.updateTableContents();

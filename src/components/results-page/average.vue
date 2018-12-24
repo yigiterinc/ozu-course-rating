@@ -5,12 +5,12 @@
         <div class="col-lg-3 col-md-6">
           <i>Previous Average</i>
           <hr>
-          <strong v-if="colors" v-bind:style="{color: colors.prevColor}">{{ previousAveragePoint }}</strong>
+          <strong>{{ previousAveragePoint }}</strong>
         </div>
         <div class="col-lg-3 col-md-6">
           <i>New Average</i>
           <hr>
-          <strong v-if="colors" v-bind:style="{color: colors.newColor}">{{ newAveragePoint }}</strong>
+          <strong>{{ newAveragePoint }}</strong>
         </div>
         <div class="col-lg-3"></div>
       </div>
@@ -19,7 +19,7 @@
           <div class="col">
             <i>Average Points</i>
             <hr>
-            <strong v-if="colors" v-bind:style="{color: colors.prevColor}">{{ previousAveragePoint }}</strong>
+            <strong>{{ previousAveragePoint }}</strong>
           </div>
         </div>
       </div>
