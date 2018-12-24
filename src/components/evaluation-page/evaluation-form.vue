@@ -75,7 +75,6 @@
       methods: {
         onSubmit(evt) {
           console.log('im in');
-          this.updateAnswers();
           this.updateCommentsAndSuggestions();
           this.submitEvaluation().then(() => {
             //this.$router.push({ path: '/results-page/' + this.ratingId});
@@ -84,11 +83,11 @@
         },
         submitEvaluation: function() { //TODO submit answers, suggestionsAndRatings with nickname
           console.log('im in');
-          if (this.rating.commentsAndSuggestions && this.newQuestions) {
+          if (this.rating.commentsAndSuggestions) {
             return new Promise((resolve,reject) => {
               firebaseDb.collection('ratings/').doc(this.ratingId).update({
                 //  commentsAndSuggestions: this.rating.commentsAndSuggestions,
-                  questions: this.newQuestions,
+                  questions: this.rating.questions,
                 }
               ).then(() => {
                 console.log('updated!');
@@ -101,6 +100,7 @@
         },
         getAnswer(e) {
           this.answers[e.index] = e.answer;
+          this.updateAnswers(e.index, e.answer);
           //this.setNewQuestions();
         },
         updateCommentsAndSuggestions: function() {
@@ -108,14 +108,11 @@
               comment: this.comment,
               suggestion: this.suggestion});
         },
-        updateAnswers: function() {
-          this.newQuestions.forEach((question,index) => {
-            question.answers.push(this.answers[index]);
-          })
-          console.log(this.newQuestions)
+        updateAnswers: function(index, answer) {
+          this.rating.questions[index].answers.push(answer);
+          console.log(this.rating.questions[index].answers);
         },
         mounted() {
-          this.newQuestions = this.rating.questions;
         }
       },
     }
