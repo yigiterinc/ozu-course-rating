@@ -1,86 +1,70 @@
 <template>
   <div class="evaluation-page">
-    <div id="navbar">
-      <b-navbar id="navContainer" fixed="top" toggleable="lg" type="dark" variant="danger">
-
-        <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-        <b-navbar-brand href="#">OzuCourseRating</b-navbar-brand>
-        <b-collapse is-nav id="nav_collapse">
-          <!-- Right aligned nav items -->
-          <b-navbar-nav class="ml-auto" >
-            <b-navbar-nav id="coursesSection">
-              <b-nav-item href="#">Courses</b-nav-item>
-            </b-navbar-nav>
-            <b-navbar-nav id="homeSection">
-              <b-nav-item href="#">Home</b-nav-item>
-            </b-navbar-nav>
-          </b-navbar-nav>
-
-        </b-collapse>
-      </b-navbar>
-    </div>
-
+    <navbar></navbar>
     <div class="container">
-      <h3>{{ this.searchResultsAsRatings[0].course.course_code }}
-             - {{ this.searchResultsAsRatings[0].course.course_name }}</h3>
+      <h3>{{ this.rating.course.courseCode }}
+        - {{ this.rating.course.courseName }}</h3>
       <hr>
       <br>
       <div class="container">
-        <evaluation-form :additional-comments="this.additionalComments"
-                         :questions="this.questions" :suggestions="this.suggestions"
-                         :course="searchResultsAsRatings[0].course">
-        </evaluation-form>
+        <evaluation-form :rating="rating" :rating-id="ratingId"></evaluation-form>
       </div>
       <br>
     </div>
   </div>
 </template>
 
-
 <script>
-  import EvaluationForm from "./evaluation-form"; // question list is going to be fetched from db by backend
+  import EvaluationForm from "./evaluation-form";
+  import Navbar from '../nav-bar/nav-bar.vue'
+  import {firebaseDb} from '../../main.js'
 
   export default {
-      name: 'evaluation-page',
-      components: {
-        EvaluationForm,
-        },
-       props: ['Rating'], // a course object is passed when it is called from search component
-      data() {
-        return {
-          questions: [],
-          additionalComments: "",
-          suggestions: "",
-          searchResultsAsRatings: this.Rating //TODO pass this from search page
-        }
-      },
+    name: 'evaluation-page',
+    components: {
+      EvaluationForm,
+      Navbar
+    },
+    props: ['ratingId'],
+    data() {
+      return {
+        questions: [],
+        additionalComments: "",
+        suggestions: "",
+        rating: {} //TODO pass this from search page
+      }
+    },
     methods: {
-        setQuestionsFromRating: function(rating) {
-          rating[0].questions.forEach(question => {
-            this.questions.push(question.questionText);
+      setQuestionsFromRating: function(rating) {
+        rating.questions.forEach(question => {
+          this.questions.push(question.questionText);
+        })
+      },
+      getRatingWithId: function() {
+        console.log('getting rating');
+        return new Promise((resolve,reject) => {
+          firebaseDb.collection('/ratings')
+                    .doc(this.ratingId)
+                    .get().then(rating => {
+                      console.log(rating.data());
+                      resolve(rating);
+          }).catch(error => {
+            reject('An error occurred while getting the rating with id:' + error);
           })
-        }
+        })
+      }
     },
     mounted () {
-      window.addEventListener('load', () => {
-        this.setQuestionsFromRating(this.searchResultsAsRatings);
-      });
+      this.getRatingWithId().then(rating => {
+        this.rating = rating.data();
+        console.log(this.rating);
+        this.setQuestionsFromRating(this.rating);
+    });
     }
     }
 </script>
 
 <style scoped>
-  #navContainer {
-    background-color: #a30050 !important;
-  }
-
-  #coursesSection, #homeSection {
-    margin-right: 70px;
-  }
-
-  #courseHeader {
-    padding-top: 20px;
-  }
 </style>
 
 

@@ -17,12 +17,12 @@ Vue.config.productionTip = false;
 
 // Initialize Firebase
 const config = {
-  apiKey: 'AIzaSyALyabHb4nbmFkMOmm21Rt4OxAgYysWUVM',
-  authDomain: 'ozu-course-rating.firebaseapp.com',
-  databaseURL: 'https://ozu-course-rating.firebaseio.com',
-  projectId: 'ozu-course-rating',
-  storageBucket: 'ozu-course-rating.appspot.com',
-  messagingSenderId: '553541406411'
+  apiKey: "AIzaSyCaxUPSK9NfdEiF3ZrmrsbkBQtJ2wPnokg",
+  authDomain: "ozu-course-rating-2-a9240.firebaseapp.com",
+  databaseURL: "https://ozu-course-rating-2-a9240.firebaseio.com",
+  projectId: "ozu-course-rating-2-a9240",
+  storageBucket: "ozu-course-rating-2-a9240.appspot.com",
+  messagingSenderId: "742359750855"
 };
 
 firebase.initializeApp(config);
@@ -43,26 +43,34 @@ const router = new Router({
   routes: [
     {
       path: '/',
+      name: 'home-page',
       component: HomePage
     },
     {
       path: '/authentication-page',
+      name: 'authentication-page',
       component: AuthenticationPage
     },
     {
-      path: '/evaluation-page',
+      path: '/evaluation-page/:ratingId',
+      name: 'evaluation-page',
       component: EvaluationPage,
+      props: true
     },
     {
-      path: '/results-page',
-      component: ResultsPage
+      path: '/results-page/:ratingId',
+      name: 'results-page',
+      component: ResultsPage,
+      props: true
     },
     {
       path: '/search-page',
+      name: 'search-page',
       component: SearchPage
     },
     {
       path: '/not-found-page',
+      name: 'not-found-page',
       component: NotFoundPage
     },
     {
@@ -176,7 +184,7 @@ new Vue({
           });
           resolve(courses);
         }).catch(error => {
-          console.error('Document NotFoundPage found');
+          console.error('Document not found');
           reject();
         });
       });
@@ -187,7 +195,7 @@ new Vue({
         (course.courseCode,
           course.instructor.instructorName).then(result => {
           if (result.length === 0 || typeof result === 'undefined') {
-            console.log('Course NotFoundPage found, adding to db');
+            console.log('Course not found, adding to db');
             this.addCourse(course.courseCode,
               course.courseName,
               course.instructor.instructorName);

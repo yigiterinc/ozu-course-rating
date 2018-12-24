@@ -28,7 +28,7 @@
       },
       methods: {
         redirectTo: function(nextLocation) {
-          location.assign(nextLocation)
+          this.$router.push({ path: nextLocation});
         }
       }
     }
