@@ -1,6 +1,6 @@
 # ozu-course-rating
 
-
+Current status of the project: Project is not live due to Firebase's daily data transfer limit with free accounts. In future website may be live again with a new database and features :)
 
 Ozu Course Rating is a website that allows the students of Ozyegin University to rate the courses they've taken and see others' comments as well. 
 
