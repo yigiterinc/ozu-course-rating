@@ -1,21 +1,14 @@
 # ozu-course-rating
 
-> 
 
-## Build Setup
 
-``` bash
-# install dependencies
-npm install
+Ozu Course Rating is a website that allows the students of Ozyegin University to rate the courses they've taken and see others' comments as well. 
 
-# serve with hot reload at localhost:8080
-npm run dev
+It is a project built for the course Software Engineering (CS 320) in Fall 2018.
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Contributors: 
+1. Yiğit Kemal Erinç
+2. Kemal Sarp Öztürk
+3. Boran Pekel
+4. Seçkin İpek
+5. Barış Cemal Onur
