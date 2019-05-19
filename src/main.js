@@ -15,14 +15,14 @@ Vue.use(BootstrapVue);
 
 Vue.config.productionTip = false;
 
-// Initialize Firebase
+// Initialize Firebase, config has been removed on public Github version
 const config = {
-  apiKey: 'AIzaSyCaxUPSK9NfdEiF3ZrmrsbkBQtJ2wPnokg',
-  authDomain: 'ozu-course-rating-2-a9240.firebaseapp.com',
-  databaseURL: 'https://ozu-course-rating-2-a9240.firebaseio.com',
-  projectId: 'ozu-course-rating-2-a9240',
-  storageBucket: 'ozu-course-rating-2-a9240.appspot.com',
-  messagingSenderId: '742359750855'
+  apiKey: '',
+  authDomain: '',
+  databaseURL: '',
+  projectId: '',
+  storageBucket: '',
+  messagingSenderId: ''
 };
 
 firebase.initializeApp(config);
